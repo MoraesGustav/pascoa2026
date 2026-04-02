@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uma Surpresa de Páscoa</title>
+    <title>Para o Amor da Minha Vida 🐰</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
     
@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* Header Inicial */
+        /* Header Inicial - Mais romântico */
         header {
             height: 100vh;
             display: flex;
@@ -32,75 +32,90 @@
             align-items: center;
             text-align: center;
             padding: 20px;
+            background: linear-gradient(180deg, #fdf2f2 0%, #ffffff 100%);
         }
 
-        header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--cor-acento); }
-        header p { font-size: 1.1rem; max-width: 300px; line-height: 1.5; }
+        header h1 { font-size: 2.8rem; margin-bottom: 15px; color: var(--cor-acento); font-weight: 600; }
+        header p { font-size: 1.1rem; max-width: 350px; line-height: 1.6; color: var(--cor-primaria); }
 
         /* Grid de Fotos */
         .gallery-container {
             padding: 15px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .grid-gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 colunas no PC */
-            gap: 8px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
         }
 
-        /* Ajuste para 2 colunas no celular para as fotos ficarem maiores */
         @media (max-width: 600px) {
-            .grid-gallery { grid-template-columns: repeat(2, 1fr); }
+            .grid-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1rem; }
         }
 
         .grid-item {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Mantém as fotos quadradinhas tipo Instagram */
+            aspect-ratio: 1 / 1;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background-color: #eee;
         }
 
         .grid-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.6s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.1);
         }
 
         /* Rodapé */
         footer {
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             background: white;
-            margin-top: 50px;
-            border-top-left-radius: 40px;
-            border-top-right-radius: 40px;
+            margin-top: 80px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.03);
         }
+
+        footer h2 { color: var(--cor-acento); margin-bottom: 20px; }
+        footer p { max-width: 400px; margin: 0 auto 20px auto; line-height: 1.6; }
 
         .btn-spotify {
             background-color: #1DB954;
             color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
+            padding: 18px 40px;
+            border-radius: 50px;
             text-decoration: none;
             display: inline-block;
             font-weight: 600;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(29, 185, 84, 0.3);
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(29, 185, 84, 0.3);
         }
 
-        .msg-final { font-style: italic; font-size: 0.9rem; margin-top: 20px; }
+        .btn-spotify:active { transform: scale(0.95); }
+
+        .msg-final { font-style: italic; font-size: 1rem; margin-top: 30px; color: var(--cor-acento); font-weight: 600; }
     </style>
 </head>
 <body>
 
     <header data-aos="fade-up">
-        <h1>Feliz Páscoa 🐰</h1>
-        <p>Dizem que o chocolate é doce, mas as memórias são o que realmente alimentam o coração.</p>
-        <p style="font-size: 0.8rem; margin-top: 20px; color: #999;">(Scrolle para ver mais)</p>
+        <h1>Feliz Páscoa, meu amor! 🐰</h1>
+        <p>Dizem que o chocolate é doce, mas nada se compara à doçura que tu trouxeste para a minha vida nestes últimos 6 anos.</p>
+        <p style="margin-top: 20px; font-weight: 600;">Eu amo-te mais do que as palavras podem descrever.</p>
+        <p style="font-size: 0.7rem; margin-top: 40px; color: #bbb; letter-spacing: 2px;">DESLIZE PARA RELEMBRAR NOSSA HISTÓRIA</p>
     </header>
 
     <div class="gallery-container">
@@ -108,23 +123,25 @@
             </div>
     </div>
 
-    <footer data-aos="zoom-in">
-        <h2>6 anos de histórias...</h2>
-        <p>Escolhi cada uma dessas fotos porque elas me lembram de momentos bons que vivemos.</p>
+    <footer data-aos="fade-up">
+        <h2>Obrigado por tudo...</h2>
+        <p>Cada uma destas fotos representa um pedaço do meu coração que pertence a ti. Que venham muitos mais anos ao teu lado.</p>
         
-        <a href="URL_DA_MUSICA_DO_SPOTIFY" class="btn-spotify" target="_blank">
-            Dar o play na nossa música 🎧
+        <a href="https://open.spotify.com/intl-pt/track/3MZasYL4eB4Tm2U2LZ58tj?si=690c7cf41f7340d6" class="btn-spotify" target="_blank">
+            Ouvir a nossa música 🎧
         </a>
 
-        <p class="msg-final">Espero que seu dia seja tão doce quanto esse ovo de páscoa.</p>
+        <p class="msg-final">Tu és o meu melhor presente, hoje e sempre.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Inicializa as animações de scroll
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ 
+            duration: 900, 
+            once: true,
+            offset: 80 
+        });
 
-        // Loop para gerar as 59 fotos automaticamente
         const grid = document.getElementById('photo-grid');
         const totalFotos = 59;
 
@@ -132,9 +149,10 @@
             const item = document.createElement('div');
             item.className = 'grid-item';
             item.setAttribute('data-aos', 'fade-up');
+            item.setAttribute('data-aos-delay', (i % 6) * 100); 
             
-            // Aqui ele busca as fotos na sua pasta img/
-            item.innerHTML = `<img src="img/foto${i}.jpg" alt="Memória ${i}" loading="lazy">`;
+            // Certifica-te que as fotos estão na pasta /img e são .jpg
+            item.innerHTML = `<img src="img/foto${i}.jpg" alt="Nossa memória ${i}" loading="lazy">`;
             
             grid.appendChild(item);
         }
