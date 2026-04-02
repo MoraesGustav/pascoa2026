@@ -23,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Inicial - Mais romântico */
         header {
             height: 100vh;
             display: flex;
@@ -36,9 +35,8 @@
         }
 
         header h1 { font-size: 2.8rem; margin-bottom: 15px; color: var(--cor-acento); font-weight: 600; }
-        header p { font-size: 1.1rem; max-width: 350px; line-height: 1.6; color: var(--cor-primaria); }
+        header p { font-size: 1.1rem; max-width: 380px; line-height: 1.6; color: var(--cor-primaria); }
 
-        /* Grid de Fotos */
         .gallery-container {
             padding: 15px;
             max-width: 1000px;
@@ -54,7 +52,6 @@
         @media (max-width: 600px) {
             .grid-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             header h1 { font-size: 2.2rem; }
-            header p { font-size: 1rem; }
         }
 
         .grid-item {
@@ -73,11 +70,8 @@
             transition: transform 0.6s ease;
         }
 
-        .grid-item:hover img {
-            transform: scale(1.1);
-        }
+        .grid-item:hover img { transform: scale(1.1); }
 
-        /* Rodapé */
         footer {
             padding: 100px 20px;
             text-align: center;
@@ -89,7 +83,7 @@
         }
 
         footer h2 { color: var(--cor-acento); margin-bottom: 20px; }
-        footer p { max-width: 400px; margin: 0 auto 20px auto; line-height: 1.6; }
+        footer p { max-width: 450px; margin: 0 auto 20px auto; line-height: 1.6; }
 
         .btn-spotify {
             background-color: #1DB954;
@@ -105,7 +99,6 @@
         }
 
         .btn-spotify:active { transform: scale(0.95); }
-
         .msg-final { font-style: italic; font-size: 1rem; margin-top: 30px; color: var(--cor-acento); font-weight: 600; }
     </style>
 </head>
@@ -113,47 +106,37 @@
 
     <header data-aos="fade-up">
         <h1>Feliz Páscoa, meu amor! 🐰</h1>
-        <p>Dizem que o chocolate é doce, mas nada se compara à doçura que tu trouxeste para a minha vida nestes últimos 6 anos.</p>
-        <p style="margin-top: 20px; font-weight: 600;">Eu amo-te mais do que as palavras podem descrever.</p>
+        <p>O chocolate é doce, mas nada se compara a tudo que vivemos nesses últimos 6 anos.</p>
+        <p style="margin-top: 20px; font-weight: 600;">Eu te amo mais do que as palavras podem descrever.</p>
         <p style="font-size: 0.7rem; margin-top: 40px; color: #bbb; letter-spacing: 2px;">DESLIZE PARA RELEMBRAR NOSSA HISTÓRIA</p>
     </header>
 
     <div class="gallery-container">
-        <div class="grid-gallery" id="photo-grid">
-            </div>
+        <div class="grid-gallery" id="photo-grid"></div>
     </div>
 
     <footer data-aos="fade-up">
-        <h2>Obrigado por tudo...</h2>
-        <p>Cada uma destas fotos representa um pedaço do meu coração que pertence a ti. Que venham muitos mais anos ao teu lado.</p>
+        <h2>Você é meu melhor presente</h2>
+        <p>Cada uma dessas fotos é um pedaço da nossa história. Obrigado por ser minha parceira de vida.</p>
         
-        <a href="https://open.spotify.com/intl-pt/track/3MZasYL4eB4Tm2U2LZ58tj?si=690c7cf41f7340d6" class="btn-spotify" target="_blank">
-            Ouvir a nossa música 🎧
+        <a href="https://open.spotify.com/intl-pt/track/3MZasYL4eB4Tm2U2LZ58tj?si=d1cd03eae9e84ca5" class="btn-spotify" target="_blank">
+            Nossa música 🎧
         </a>
 
-        <p class="msg-final">Tu és o meu melhor presente, hoje e sempre.</p>
+        <p class="msg-final">Te amo infinitamente, hoje e sempre.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ 
-            duration: 900, 
-            once: true,
-            offset: 80 
-        });
-
+        AOS.init({ duration: 900, once: true, offset: 80 });
         const grid = document.getElementById('photo-grid');
         const totalFotos = 59;
-
         for (let i = 1; i <= totalFotos; i++) {
             const item = document.createElement('div');
             item.className = 'grid-item';
             item.setAttribute('data-aos', 'fade-up');
             item.setAttribute('data-aos-delay', (i % 6) * 100); 
-            
-            // Certifica-te que as fotos estão na pasta /img e são .jpg
             item.innerHTML = `<img src="img/foto${i}.jpg" alt="Nossa memória ${i}" loading="lazy">`;
-            
             grid.appendChild(item);
         }
     </script>
