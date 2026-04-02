@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Surpresa de Páscoa</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cor-fundo: #fdf2f2;
+            --cor-primaria: #5a4a4a;
+            --cor-acento: #e8a0a0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-primaria);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Inicial */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--cor-acento); }
+        header p { font-size: 1.1rem; max-width: 300px; line-height: 1.5; }
+
+        /* Grid de Fotos */
+        .gallery-container {
+            padding: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas no PC */
+            gap: 8px;
+        }
+
+        /* Ajuste para 2 colunas no celular para as fotos ficarem maiores */
+        @media (max-width: 600px) {
+            .grid-gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .grid-item {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Mantém as fotos quadradinhas tipo Instagram */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        /* Rodapé */
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            background: white;
+            margin-top: 50px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+
+        .btn-spotify {
+            background-color: #1DB954;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(29, 185, 84, 0.3);
+        }
+
+        .msg-final { font-style: italic; font-size: 0.9rem; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header data-aos="fade-up">
+        <h1>Feliz Páscoa 🐰</h1>
+        <p>Dizem que o chocolate é doce, mas as memórias são o que realmente alimentam o coração.</p>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: #999;">(Scrolle para ver mais)</p>
+    </header>
+
+    <div class="gallery-container">
+        <div class="grid-gallery" id="photo-grid">
+            </div>
+    </div>
+
+    <footer data-aos="zoom-in">
+        <h2>6 anos de histórias...</h2>
+        <p>Escolhi cada uma dessas fotos porque elas me lembram de momentos bons que vivemos.</p>
+        
+        <a href="URL_DA_MUSICA_DO_SPOTIFY" class="btn-spotify" target="_blank">
+            Dar o play na nossa música 🎧
+        </a>
+
+        <p class="msg-final">Espero que seu dia seja tão doce quanto esse ovo de páscoa.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Inicializa as animações de scroll
+        AOS.init({ duration: 1000, once: true });
+
+        // Loop para gerar as 59 fotos automaticamente
+        const grid = document.getElementById('photo-grid');
+        const totalFotos = 59;
+
+        for (let i = 1; i <= totalFotos; i++) {
+            const item = document.createElement('div');
+            item.className = 'grid-item';
+            item.setAttribute('data-aos', 'fade-up');
+            
+            // Aqui ele busca as fotos na sua pasta img/
+            item.innerHTML = `<img src="img/foto${i}.jpg" alt="Memória ${i}" loading="lazy">`;
+            
+            grid.appendChild(item);
+        }
+    </script>
+</body>
+</html>
